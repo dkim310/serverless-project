@@ -15,7 +15,7 @@ describe('Tests index', function () {
         let response = JSON.parse(result.body);
 
         expect(response).to.be.an('object');
-        expect(response.message).to.be.equal("hello this is local environment");
+        expect(response.message).to.be.equal("hello this is production environment");
     });
 });
 

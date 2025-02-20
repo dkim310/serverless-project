@@ -16,7 +16,7 @@ export const lambdaHandler = async (event, context) => {
         return {
             'statusCode': 200,
             'body': JSON.stringify({
-                message: 'hello this is local environment aaaa',
+                message: 'hello this is production environment',
             })
         }
     } catch (err) {
