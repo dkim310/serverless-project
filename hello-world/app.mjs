@@ -11,8 +11,16 @@
  * 
  */
 
+import { Logger } from '@aws-lambda-powertools/logger';
+
+const logger = new Logger({ serviceName: 'helloWorldService' });
+
 export const lambdaHandler = async (event, context) => {
     try {
+        
+        logger.info('this is lambda powertools logger');
+        console.log('this is normal console.log');
+        
         return {
             'statusCode': 200,
             'body': JSON.stringify({
