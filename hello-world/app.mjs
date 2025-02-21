@@ -20,8 +20,7 @@ export const lambdaHandler = async (event, context) => {
     try {
         
             logger.info('this is lambda powertools logger');
-            logger.info(params);
-        
+
         return {
             'statusCode': 200,
             'body': JSON.stringify({
