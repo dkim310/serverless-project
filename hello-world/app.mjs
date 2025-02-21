@@ -43,7 +43,7 @@ export const lambdaHandler = async (event, context) => {
         TableName : process.env.DatabaseTable,
         Item: {
         ID: Math.floor(Math.random() * Math.floor(10000000)).toString(),
-        created:  moment().format('YYYYMMDD-hhmmss'),
+        created:  '20250220-104244',//moment().format('YYYYMMDD-hhmmss'),
         metadata:JSON.stringify(event),
         }
     }
