@@ -13,12 +13,16 @@
 
 import { Logger } from '@aws-lambda-powertools/logger';
 
-import * as AWS from 'aws-sdk'; 
-import * as moment from 'moment'; 
+import {AWS} from '@aws-sdk'; 
+import {moment} from '@moment'; 
+
+//import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+//import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 
 //const AWS = require('aws-sdk');
 //const moment = require('moment');
 const documentClient = new AWS.DynamoDB.DocumentClient();
+
 const logger = new Logger({ serviceName: 'helloWorldService' });
 
 export const lambdaHandler = async (event, context) => {
