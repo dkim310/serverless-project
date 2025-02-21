@@ -12,48 +12,15 @@
  */
 
 import { Logger } from '@aws-lambda-powertools/logger';
-//import moment from 'moment';
-
-import * as moment from 'moment'
-
-//import {AWS} from '@aws-sdk'; 
-//import {moment} from '@moment'; 
-
-//import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-//import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
-
-//const AWS = require('aws-sdk');
-//const moment = require('moment');
-import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-import {
-  DynamoDBDocumentClient,
-  PutCommand,
-} from "@aws-sdk/lib-dynamodb";
-const client = new DynamoDBClient({});
-const documentClient = DynamoDBDocumentClient.from(client);
-
-
-//const documentClient = new AWS.DynamoDB.DocumentClient();
 
 const logger = new Logger({ serviceName: 'helloWorldService' });
 
 export const lambdaHandler = async (event, context) => {
     
-    let params = {
-        TableName : process.env.DatabaseTable,
-        Item: {
-        ID: Math.floor(Math.random() * Math.floor(10000000)).toString(),
-        created:  '20250220-104244',//moment().format('YYYYMMDD-hhmmss'),
-        metadata:JSON.stringify(event),
-        }
-    }
-    
     try {
         
             logger.info('this is lambda powertools logger');
             logger.info(params);
-            let data = await documentClient.put(params).promise()
-
         
         return {
             'statusCode': 200,
