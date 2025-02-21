@@ -12,7 +12,9 @@
  */
 
 import { Logger } from '@aws-lambda-powertools/logger';
-import moment from 'moment';
+//import moment from 'moment';
+
+import * as moment from 'moment'
 
 //import {AWS} from '@aws-sdk'; 
 //import {moment} from '@moment'; 
